@@ -1,0 +1,20 @@
+{% extends 'user/index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/user_complaint_code">
+  <table class="table table-success table-hover">
+    <tr>
+      <td>
+        <textarea name="textarea" class="form-control" placeholder="Enter your complaint here..."></textarea>
+     </td>
+    </tr>
+    <tr>
+      <td colspan="1" align="center"><label>
+        <input type="submit" name="Submit" value="Send" class="btn btn-success"/>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

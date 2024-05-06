@@ -1,0 +1,23 @@
+{% extends 'admin/index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-success table-hover">
+    <tr>
+      <th>User</th>
+      <th>Feedback</th>
+      <th>Date</th>
+    </tr>
+    {% for i in val4 %}
+        <tr>
+          <td>&nbsp;{{ i.USER.name }}</td>
+          <td>&nbsp;{{ i.feedback }}</td>
+          <td>&nbsp;{{ i.date }}</td>
+        </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

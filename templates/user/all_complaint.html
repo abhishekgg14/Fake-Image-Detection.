@@ -1,0 +1,31 @@
+{% extends 'user/index.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-success table-hover">
+    <tr  class="table-active">
+      <th>Complaint</th>
+      <th>Date</th>
+      <th>Reply</th>
+      <td>&nbsp;</td>
+    </tr>
+      {% for i in val2 %}
+        <tr>
+          <td>{{ i.complaint }}</td>
+          <td>{{ i.date }}</td>
+          <td>{{ i.reply }}</td>
+          <td><a href="/delete_complaint/{{ i.id }}">Delete</a></td>
+        </tr>
+      {% endfor %}
+      <tr>
+          <td colspan="4">
+             <a href="/user_complaint">New complaint</a>
+          </td>
+      </tr>
+  </table>
+</form>
+</body>
+
+{% endblock %}

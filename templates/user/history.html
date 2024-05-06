@@ -1,0 +1,24 @@
+{% extends 'user/index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-success table-hover">
+    <tr class="table-active">
+      <th>Image</th>
+      <th>Result</th>
+        <th>Error Level</th>
+        <th>Date</th>
+    </tr>
+      {% for i in val4 %}
+        <tr>
+          <td><img src="{{ i.image.url }}" height="150" width="150">  </td>
+          <td>&nbsp;{{ i.result }} </td>
+          <td>&nbsp;{{ i.errorlevel }} </td>
+          <td>&nbsp;{{ i.date }} </td>
+        </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}
