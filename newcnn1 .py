@@ -50,7 +50,10 @@ def read_dataset(path):
     data_list = []
     label_list = []
     i=0
+    # List all subdirectories in the specified path
     my_list = os.listdir(r'C:\Users\abhis\MCA S4\Project\Dataset\Train')
+
+    # Iterate over each subdirectory (class label)
     for pa in my_list:
 
         print(pa,"==================",i)
@@ -58,14 +61,17 @@ def read_dataset(path):
 
          for f in files:
             file_path = os.path.join(r'C:\Users\abhis\MCA S4\Project\Dataset\Train\\'+pa, f)
+            # Read image in grayscale using OpenCV
             img = cv2.imread(file_path, cv2.IMREAD_GRAYSCALE)
+            # Resize the image to a fixed size (48x48) using cubic interpolation
             res = cv2.resize(img, (48, 48), interpolation=cv2.INTER_CUBIC)
+            # Append the resized image to the data_list
             data_list.append(res)
-            # label = dirPath.split('/')[-1]
-
+            # Append the corresponding class label (index) to label_list
             label_list.append(i)
-            # label_list.remove("./training")
+        # Increment the class label index
         i=i+1
+    # Convert data_list and label_list to NumPy arrays of float32 type.p\
     return (np.asarray(data_list, dtype=np.float32), np.asarray(label_list))
 
 
